@@ -14,7 +14,7 @@ const Cards = ({ data,big }:any) => {
 
     return (
         <Card
-            onClick={() => { router.push(`/detail/${data.id} `) }}
+            onClick={() => {!big && router.push(`/detail/${data.id} `) }}
             hoverable
             className={big ? styles.cardBig: styles.card}
             cover={<img alt={data.id} src={`${data.thumbnail.path}.${data.thumbnail.extension}`} />}
