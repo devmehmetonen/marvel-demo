@@ -6,12 +6,53 @@
     margin-bottom: 32px;
     max-width: 100%;
 
+    img{
+        overflow: hidden;
+        object-fit: cover;
+        object-position: 50% 30%;
+        height: 320px;
+    }
+
     &:hover{
         img{
             transform: scale(1.2,1.2);
             transition: all 2s ease-in-out;
-            overflow: hidden;
-          
+        }
+    }
+}
+.cardBig{
+    border-radius: 10px 10px 12px 10px;
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 32px;
+    max-width: 100%;
+
+    img{
+        overflow: hidden;
+        height: 440px;
+        object-fit: cover;
+    }
+
+    &:hover{
+        img{
+            transform: scale(1.2,1.2);
+            transition: all 2s ease-in-out;
+           
+        }
+    }
+
+    @media screen and (max-width:992px) {
+        height: 400px;
+        img{
+            height: 360px;
+        }
+    }
+    @media screen and (max-width:576px) {
+        height: 550px;
+        img{
+            height: 500px;
+            object-position: 0 0;
         }
     }
 }

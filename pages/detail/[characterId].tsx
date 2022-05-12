@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Detail from '../../app/components/Detail/Detail'
 import Navigation from '../../app/components/Navigation'
 import { wrapper } from '../../app/store'
@@ -14,13 +14,23 @@ const DetailPage = () => {
   )
 }
 export const getServerSideProps = wrapper.getServerSideProps((store) => async ({query}) => {
-  let currentCharacter = await store.dispatch(getCharacterByIdAsync(query.characterId))
+  let currentCharacter = await store.dispatch(getCharacterByIdAsync(String(query.characterId)))
+  
+  let comics = await store.dispatch(getComicsByIdAsync(String(query.characterId)))
+  if(comics.payload.length===0 || !currentCharacter.payload){
+    return{
+      redirect: {
+        destination: '/404',
+        permanent: false,
+      },
+    }
+  }
   store.dispatch(setCurrentCharacter(currentCharacter.payload))
-  let comics = await store.dispatch(getComicsByIdAsync(query.characterId))
   store.dispatch(setComics(comics.payload))
   return {
     props: {}
   };
+  
 });
 
 export default wrapper.withRedux(DetailPage)

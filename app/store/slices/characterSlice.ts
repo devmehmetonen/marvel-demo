@@ -7,7 +7,7 @@ import { fetchCharacter, fetchCharacterById, fetchComicsById } from './character
 
 interface IState {
     characters: Array<any>,
-    currentCharacter: any,
+    currentCharacter:any,
     comics: Array<any>,
 }
 const initialState: IState = {
@@ -62,7 +62,7 @@ export const  getCharacterAsync  = createAsyncThunk(
 
 export const getCharacterByIdAsync = createAsyncThunk(
   'marvelCharacters/fetchCharacterById',
-  async (char_id: any) => {
+  async (char_id: string) => {
     const response = await fetchCharacterById(char_id);
     return response.results[0];
   }
@@ -70,7 +70,7 @@ export const getCharacterByIdAsync = createAsyncThunk(
 
 export const getComicsByIdAsync = createAsyncThunk(
   'marvel/fetchComics',
-  async (char_id:any) => {
+  async (char_id:string) => {
       const response = await fetchComicsById(char_id);
 
       return response.results;

@@ -25,7 +25,7 @@ const Home = () => {
       >
         <Row gutter={24}>
           {characters.map((character: any, i: number) =>
-          (<Col xs={24} sm={24} md={12} lg={8} xl={8} key={i}>
+          (<Col xs={24} sm={12} md={12} lg={8} xl={8} key={i}>
             <Cards data={character} />
           </Col>)
           )}

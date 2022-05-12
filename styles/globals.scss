@@ -44,9 +44,11 @@ a {
   padding-block: 122px 32px;
   max-width: 1200px;
   margin: 0 auto;
+  padding-inline: 16px;
 
   @media screen and(max-width:1200px) {
     max-width: 960px;
+    
   }
 
   @media screen and(max-width:992px) {
@@ -61,7 +63,6 @@ a {
 }
 
 .NotFoundPage {
-  @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
   background-color: #202020;
   align-items: center;
@@ -70,6 +71,7 @@ a {
   height: 100vh;
   justify-content: center;
   text-align: center;
+  width: 100%;
 
   *,
   *:after,
@@ -80,7 +82,6 @@ a {
   h1 {
     color: #fcfcfc;
     font-size: 12.5rem;
-    letter-spacing: .10em;
     margin: .025em 0;
     text-shadow: .05em .05em 0 rgba(0, 0, 0, .25);
     white-space: nowrap;

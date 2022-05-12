@@ -4,7 +4,11 @@ import { useRouter } from 'next/router'
 import styles from './Card.module.scss'
 
 import { Card } from 'antd';
-const Cards = ({ data }: any) => {
+
+
+
+
+const Cards = ({ data,big }:any) => {
 
     const router = useRouter()
 
@@ -12,7 +16,7 @@ const Cards = ({ data }: any) => {
         <Card
             onClick={() => { router.push(`/detail/${data.id} `) }}
             hoverable
-            className={styles.card}
+            className={big ? styles.cardBig: styles.card}
             cover={<img alt={data.id} src={`${data.thumbnail.path}.${data.thumbnail.extension}`} />}
         >
             <div className={styles.title}>

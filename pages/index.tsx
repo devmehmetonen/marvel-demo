@@ -18,6 +18,14 @@ const Home: NextPage = () => {
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
   let data = await store.dispatch(getCharacterAsync(0));
   store.dispatch(setCharacters(data.payload))
+  if(data.payload.length===0){
+    return{
+      redirect: {
+        destination: '/404',
+        permanent: false,
+      },
+    }
+  }
   return {
     props: {}
   };
