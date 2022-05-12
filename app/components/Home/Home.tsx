@@ -21,7 +21,7 @@ const Home = () => {
         dataLength={characters.length}
         next={fetchMoreData}
         hasMore={true}
-        loader={<p style={{ color: "white" }}>Loading...</p>}
+        loader={<p style={{ color: "#E62429", fontSize:24,fontWeight:600 }}>Loading...</p>}
       >
         <Row gutter={24}>
           {characters.map((character: any, i: number) =>

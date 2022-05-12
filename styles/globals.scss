@@ -11,6 +11,8 @@ body {
   background-size: 160px;
   background-position: 100% 86%;
   background-attachment: fixed;
+  
+
 
   @media screen and(max-width:1440px) {
     background: none;
@@ -45,10 +47,8 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding-inline: 16px;
-
   @media screen and(max-width:1200px) {
     max-width: 960px;
-    
   }
 
   @media screen and(max-width:992px) {
@@ -123,4 +123,8 @@ a {
       transform: translatey(-.15em);
     }
   }
+}
+
+.infinite-scroll-component {
+  overflow: hidden!important;
 }
